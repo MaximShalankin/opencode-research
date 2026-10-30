@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "naming": "{YYYYMMDD}-{type}-{slug}.md",
+  "id": "имя файла без .md",
+  "types": {
+    "note": {
+      "dir": "10_Notes",
+      "statuses": ["actual", "stale", "archived"],
+      "required": ["id", "type", "status", "title", "created"],
+      "optional": ["tags", "related", "source"]
+    }
+  },
+  "created_format": "YYYY-MM-DD",
+  "skip_dirs": ["00_System", "90_Archive"],
+  "state": { "path": "STATE.md", "max_lines": 120, "required_fields": ["updated"] }
+}

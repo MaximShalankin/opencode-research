@@ -1,0 +1,36 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "vllm/Qwen3.8-27B",
+  "provider": {
+    "vllm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "vllm",
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1"
+      },
+      "models": {
+        "Qwen3.8-27B": {
+          "name": "Qwen3.8-27B"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "vault": {
+      "type": "local",
+      "command": ["vault-core", "mcp", "--project", "."],
+      "enabled": true
+    }
+  },
+  "permission": {
+    "edit": "allow",
+    "webfetch": "deny",
+    "bash": {
+      "*": "allow",
+      "sudo *": "deny",
+      "rm -rf *": "deny",
+      "git push *": "deny",
+      "curl *": "deny"
+    }
+  }
+}

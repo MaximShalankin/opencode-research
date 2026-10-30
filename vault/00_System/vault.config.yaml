@@ -1,0 +1,28 @@
+# vault-core: конфиг проекта памяти.
+# Дефолты — в src/vault_core/config.py; здесь переопределено нужное.
+index_dir: vault/.index
+include_dirs:
+- papers
+chunk_size: 1200
+chunk_overlap: 150
+# Чанк не пересекает границу страницы: в выдаче появляется «p. N».
+chunk_boundary: page
+embedding:
+  provider: ollama
+  model: bge-m3:latest
+  base_url: http://127.0.0.1:11434
+  timeout_sec: 60
+bm25:
+  backend: rank_bm25
+  stemmer: none
+retrieval:
+  mode: hybrid
+  top_k: 8
+  weights:
+    bm25: 0.4
+    vector: 0.6
+  rrf_k: 60
+  snippet_chars: 400
+watcher:
+  enabled: true
+  debounce_sec: 2

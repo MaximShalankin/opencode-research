@@ -1,0 +1,106 @@
+{
+  "paper": {
+    "data": {
+      "dataset": {
+        "value": "WMT 2014 English-German",
+        "page": 7
+      },
+      "train_pairs": {
+        "value": 4500000,
+        "page": 7
+      },
+      "bpe_vocab": {
+        "value": 37000,
+        "page": 7
+      }
+    },
+    "model": {
+      "layers": {
+        "value": 6,
+        "page": 3
+      },
+      "d_model": {
+        "value": 512,
+        "page": 3
+      },
+      "heads": {
+        "value": 8,
+        "page": 5
+      },
+      "d_ff": {
+        "value": 2048,
+        "page": 5
+      },
+      "dropout": {
+        "value": 0.1,
+        "page": 8
+      },
+      "label_smoothing": {
+        "value": 0.1,
+        "page": 8
+      }
+    },
+    "optimizer": {
+      "name": {
+        "value": "Adam",
+        "page": 7
+      },
+      "betas": {
+        "value": [0.9, 0.98],
+        "page": 7
+      },
+      "eps": {
+        "value": 1e-09,
+        "page": 7
+      },
+      "warmup_steps": {
+        "value": 4000,
+        "page": 7
+      },
+      "schedule": {
+        "value": "linear warmup then inverse square root decay",
+        "page": 7
+      }
+    },
+    "batch_tokens": {
+      "value": 25000,
+      "page": 7
+    },
+    "eval": {
+      "metric": {
+        "value": "BLEU",
+        "page": 8
+      },
+      "test_set": {
+        "value": "newstest2014",
+        "page": 8
+      }
+    },
+    "reported_bleu": {
+      "base_en_de": {
+        "value": 27.3,
+        "page": 8
+      },
+      "big_en_de": {
+        "value": 28.4,
+        "page": 8
+      }
+    }
+  },
+  "implementation": {
+    "dataset": "Multi30k en-de",
+    "layers": 2,
+    "d_model": 256,
+    "heads": 4,
+    "d_ff": 1024,
+    "dropout": 0.1,
+    "label_smoothing": 0.1,
+    "warmup_steps": 4000,
+    "seed": 42,
+    "tokenizer": {
+      "type": "BPE",
+      "vocab_size": 16000
+    },
+    "max_epochs": 30
+  }
+}

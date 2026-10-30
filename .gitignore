@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# opencode-research: runtime artifacts
+/opencode.json
+/papers/
+/data/
+/workspace/
+/vault/.index/
+/vault/.kg/
+/.mcp.json
+/paper.pdf
